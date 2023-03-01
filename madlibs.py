@@ -40,8 +40,8 @@ def type2():
 	animal1 = input("Input another Animal: ")
 	number1 = input("Input another Number: ")
 	silly = input("Input a Silly Word: ")
-	noun1 = input("Input another Noun: ")	
-	
+	noun1 = input("Input another Noun: ")
+
 	story = f'''This weekend I am going camping with {noun}. I packed my lantern, sleeping bag, and {noun}. I am so {adj} to {verb} in a tent. I am {adj1} we might see a(n) {animal}, I hear they’re kind of dangerous. While we’re camping, we are going to hike, fish, and {verb1}. I have heard that the {color} lake is great for {verbing}. Then we will {adv} hike through the forest for {number} {time}. If I see a {color1} {animal1} while hiking, I am going to bring it home as a pet! At night we will tell {number1} {silly} stories and roast {noun1} around the campfire!! '''
 	print(story)
 
@@ -66,25 +66,26 @@ def type3():
 	verbing = input("Input a Verb (ending in ing): ")
 	adj4 = input("Input an Adjective again: ")
 	noun4 = input("Input a Noun one last time: ")
-	
+
 	story = f'''Dear {name}, I am writing to you from a {adj} castle in an enchanted forest. I found myself here one day after going for a ride on a {color} {animal} in {place}. There are {adj1} {magcr} and {adj2} {magcr1} here! In the {room} there is a pool full of {noun}. I fall asleep each night on a {noun1} of {noun2} and dream of {adj3} {noun3}. It feels as though I have lived here for {number} {time}. I hope one day you can visit, although the only way to get here now is {verbing} on a {adj4} {noun4}!! '''
 	print(story)
 
 
-temp = int(input("Choose 1 of 3 templates or type 0 for random choice: "))
-if temp == 1:
-	type1()
-elif temp == 2:
-	type2()
-elif temp == 3:
-	type3()
-elif temp ==0:
-	r = random.randint(1, 3)
-	if r == 1:
+try:
+	temp = int(input("Choose 1 of 3 templates or type 0 for random choice: "))
+	if temp == 1:
 		type1()
-	elif r == 2:
+	elif temp == 2:
 		type2()
-	else:
+	elif temp == 3:
 		type3()
-else:
+	else:
+		r = random.randint(1, 3)
+		if r == 1:
+			type1()
+		elif r == 2:
+			type2()
+		else:
+			type3()
+except:
 	print("Invalid choice, try again")
